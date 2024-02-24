@@ -96,7 +96,7 @@ rightArrow.addEventListener('click', () => {
 //     swiper: swiper,
 //   },
 // });const inputs = document.querySelectorAll(".input");
-
+const inputs = document.querySelectorAll(".input");
 function focusFunc() {
   let parent = this.parentNode;
   parent.classList.add("focus");
