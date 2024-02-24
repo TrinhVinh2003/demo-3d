@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Popup</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        *:focus{
+            outline: none;
+        }
+        
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ff7a2d;
+            font-family: 'roboto', sans-serif;
+        }
+        
+        .gallery{
+            width: 80%;
+            height: 90vh;
+            max-width: 1600px;
+            max-height: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tranding-slide-img{
+            width: 30%;
+            height: calc(50% - 20px);
+            min-width: 300px;
+            min-height: 200px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1s;
+        }
+        
+        /* popup */
+        
+        .popup{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 100%;
+            max-width: 1600px;
+            height: 100%;
+            max-height: 1000px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            overflow: hidden;
+            transition: 1s;
+            opacity: 0;
+        }
+        
+        .popup.active{
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        
+        .popup.active .close-btn,
+        .popup.active .image-name,
+        .popup.active .index,
+        .popup.active .large-image,
+        .popup.active .arrow-btn{
+            opacity: 1;
+            transition: opacity .5s;
+            transition-delay: 1s;
+        }
+        
+        .top-bar{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+           
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 300;
+        }
+        
+        .image-name{
+            opacity: 0;
+        }
+        
+        .close-btn{
+            opacity: 0;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 30px;
+            
+            cursor: pointer;
+        }
+        
+        .arrow-btn{
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        
+        .left-arrow{
+            left: 10px;
+        }
+        
+        .right-arrow{
+            right: 10px;
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .arrow-btn:hover{
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .index{
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 80px;
+            font-weight: 100;
+            color: rgba(255, 255, 255, 0.4);
+            opacity: 0;
+        }
+        
+        .large-image{
+            margin-top: 5%;
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            opacity: 0;
+        }
+    </style>
+    <!-- popup -->
+    <div class="popup">
+        <!-- top bar -->
+        <div class="top-bar">
+            <p class="image-name"></p>
+            <span class="close-btn">x</span>
+        </div>
+        <!-- arrows -->
+        <button class="arrow-btn left-arrow"><img src="img/arrow.png" alt=""></button>
+        <button class="arrow-btn right-arrow"><img src="img/arrow.png" alt=""></button>
+        <!-- image -->
+        <img src="assets/img/team/1.jpg" class="large-image" alt="">
+        <!-- image-index -->
+        <h1 class="index">01</h1>
+    </div>
+
+    <section id="tranding">
+        <div class="container">
+            <div class="swiper tranding-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg" class="image" alt="Tranding">
+                        </div>
+                        
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg" class="image" alt="Tranding">
+                        </div>
+                        
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg" class="image" alt="Tranding">
+                        </div>
+                        
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg" class="image" alt="Tranding">
+                        </div>
+                        
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg" class="image" alt="Tranding">
+                        </div>
+                        
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg"  class="image" alt="Tranding">
+                        </div>
+                        
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="assets/img/team/1.jpg" class="image" alt="Tranding">
+                        </div>
+                        
+                    <!-- Slide-end -->
+                </div>
+
+                
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+        </div>
+    </section>
+
+   <script>
+    const images = [...document.querySelectorAll('.image')];
+
+// popup
+
+    const popup = document.querySelector('.popup');
+    const closeBtn = document.querySelector('.close-btn');
+    const imageName = document.querySelector('.image-name');
+    const largeImage = document.querySelector('.large-image');
+    const imageIndex = document.querySelector('.index');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+
+    let index = 0; // will track our current image;
+    console.log(images.length)
+    images.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            updateImage(i);
+            popup.classList.toggle('active');
+        })
+    })
+
+    const updateImage = (i) => {
+        let path = `assets/img/team/${i+1}.jpg`; 
+        largeImage.src = path;
+    
+        imageIndex.innerHTML = `0${i+1}`;
+        index = i;
+    }
+
+    closeBtn.addEventListener('click', () => {
+        popup.classList.toggle('active');
+    })
+
+    leftArrow.addEventListener('click', () => {
+        if(index > 0){
+            updateImage(index - 1);
+        }
+    })
+
+    rightArrow.addEventListener('click', () => {
+        if(index < images.length - 1){
+            updateImage(index + 1);
+        }
+    })
+   </script>
+    
+</body>
+</html>
