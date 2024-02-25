@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--  *****   Link To Custom CSS Style Sheet   *****  -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--  *****   Link To Font Awsome Icons   *****  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+          }
+          html{
+            /*   *****   Storing Colors In Variables   *****  */
+            --body-clr: #f6f9fe;
+          
+            --primary-light-clr: #eaf3fa;
+            --links-clr: #186f78;
+            --text-clr: #3f7277;
+          }
+          body{
+            width: 100%;
+            min-height: 100vh;
+          }
+        .portfolio{
+            width: 100%;
+            padding: 30px 8%;
+            background-color: #ffffff;
+          }
+        
+          .portfolio .button-group{
+            text-align: center;
+            margin-bottom: 40px;
+          }
+          .portfolio .button-group .button{
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #ffffff;
+            color: #000000;
+            font-style: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+          }
+          .portfolio .button-group .button.active{
+
+            color: #3d3b3b;
+          }
+          .portfolio .button-group .button:hover{
+            
+            color: #e7a82a;
+          }
+          .portfolio div.gallery{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+          }
+          .portfolio div.gallery .item{
+            position: relative;
+            margin: 4px;
+            width: calc(33.33% - 8px);
+            overflow: hidden;
+            cursor: pointer;
+          }
+          .portfolio .item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+          }
+          .portfolio div.gallery .item:hover img{
+            transform: scale(1.15);
+          }
+          .portfolio .item .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(5,85,92,0.7);
+            color: #f6f9fe;
+            padding: 15px;
+            overflow: hidden;
+            transition: opacity 0.2s ease-in-out;
+            opacity: 0;
+          }
+          .portfolio .item:hover .overlay{
+            opacity: 1;
+          }
+          .portfolio .item .overlay a{
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #f6f9fe;
+            color: #f6f9fe;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+          }
+          .portfolio .item .overlay a:hover{
+    
+            color: var(#05555c);
+          }
+          
+          
+          @media(max-width: 1024px){
+            .portfolio div.gallery .item{
+              width: calc(50% - 8px);
+            }
+          }
+          
+          @media(max-width: 600px){
+            .portfolio div.gallery .item{
+              width: 100%;
+              margin: 4px 0px;
+            }
+          }
+    </style>
+<section class="portfolio">
+	
+
+	<main class="mainContainer">
+		<h1>Our Porfolio</h1>
+        <p>We provide high-quality Architectural visualization and 3D rendering service. Reasonable prices just from 200$ to 400$ for one render!</p>
+		<!--  *****  Buttons Section Starts  *****  -->
+		<div class="button-group">
+			<button class="button active" data-filter="*">All</button>
+			<button class="button" data-filter=".design">Design</button>
+		    <button class="button" data-filter=".development">Development</button>
+			<button class="button" data-filter=".logo">Logo</button>
+		</div>
+		<!--  *****  Buttons Section Ends  *****  -->
+
+		<!--  *****  Gallery Section Starts  *****  -->
+		<div class="gallery">
+			
+			<!--  *****  Card 1 Starts  *****  -->
+			<div class="item design">
+				<img src="assets/img/portfolio/project1/1.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 1 Ends  *****  -->
+
+			<!--  *****  Card 2 Starts  *****  -->
+			<div class="item design">
+				<img src="assets/img/portfolio/project3/1.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 2 Ends  *****  -->
+
+			<!--  *****  Card 3 Starts  *****  -->
+			<div class="item development">
+				<img src="assets/img/portfolio/project1/1.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 3 Ends  *****  -->
+
+			<!--  *****  Card 4 Starts  *****  -->
+			<div class="item development">
+				<img src="assets/img/portfolio/project3/1.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 4 Ends  *****  -->
+
+			<!--  *****  Card 5 Starts  *****  -->
+			<div class="item development">
+				<img src="assets/img/portfolio/project1/1.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 5 Ends  *****  -->
+
+			<!--  *****  Card 6 Starts  *****  -->
+			<div class="item logo">
+				<img src="assets/img/portfolio/project3/1.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<!--  *****  Card 6 Ends  *****  -->
+
+		</div>
+		<!--  *****  Gallery Section Ends  *****  -->
+
+	</main>
+
+</section>
+
+
+<!--   *****   JQuery Link   *****   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--   *****   Isotope Filter Link   *****  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+<script type="">
+	var $galleryContainer = $('.gallery').isotope({
+		filter: '.item',
+		animationOptions:{
+			queue: true
+		}
+	})
+
+	$('.button-group .button').on('click', function(){
+		$('.button-group .button').removeClass('active');
+		$(this).addClass('active');
+
+		var value = $(this).attr('data-filter');
+		$galleryContainer.isotope({
+			filter: value ,
+			animationOptions:{
+				queue: true
+			}
+		})
+		return false
+	})
+	
+
+</script>
+
+</body>
+</html>

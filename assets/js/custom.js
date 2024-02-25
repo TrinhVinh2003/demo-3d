@@ -562,19 +562,18 @@ const dsnParam = {
       });
     }).then(() => {
       gsap.set(menu, {
-        yPercent: -100,
-        autoAlpha: 0
+      
       });
       menu.classList.remove('d-none');
       gsap.to(menu, {
-        yPercent: 0,
+        yPercent: -100,
         autoAlpha: 0,
-        delay: 1,
+      
         clearProps: true
       });
     });
     $effectScroll.getListener(function (e, x, y) {
-      if (y > 170) {
+      if (y > 10) {
         if (targets.scrDown < y) {
           menu.classList.add("nav-bg", "hide-nav");
         } else {
