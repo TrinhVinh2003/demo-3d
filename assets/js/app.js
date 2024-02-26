@@ -1,7 +1,9 @@
 
 swiper3d();
-inputfooter();
+popupro();
+
 portfolio();
+inputfooter();
 // swiper pro
 function swiper3d(){
   var TrandingSlider = new Swiper('.tranding-slider', {
@@ -28,7 +30,7 @@ function swiper3d(){
   });
 }
   
-popupro()
+
 // popup-pro
 function popupro(){
   const images = [...document.querySelectorAll('.image')];
@@ -100,25 +102,24 @@ function inputfooter(){
   });
 
 }
-function portfolio(){
-  var $galleryContainer = $('.gallery').isotope({
-		filter: '.item',
-		animationOptions:{
-			queue: true
-		}
-	})
 
-	$('.button-group .button').on('click', function(){
-		$('.button-group .button').removeClass('active');
-		$(this).addClass('active');
+var $galleryContainer = $('.gallery').isotope({
+  filter: '.item',
+  animationOptions:{
+    queue: true
+  }
+})
 
-		var value = $(this).attr('data-filter');
-		$galleryContainer.isotope({
-			filter: value ,
-			animationOptions:{
-				queue: true
-			}
-		})
-		return false
-	})
-}
+$('.button-group .button').on('click', function(){
+  $('.button-group .button').removeClass('active');
+  $(this).addClass('active');
+
+  var value = $(this).attr('data-filter');
+  $galleryContainer.isotope({
+    filter: value ,
+    animationOptions:{
+      queue: true
+    }
+  })
+  return false
+})
